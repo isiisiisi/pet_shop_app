@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class PetTile extends StatelessWidget {
   final String petBreed;
   final String petPrice;
   final String imagePath;
-  final color;
+  final Color color;
   final VoidCallback onTap;
 
   const PetTile({
@@ -27,17 +26,16 @@ class PetTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           child: Container(
             decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                const BoxShadow(
-                  color: Color.fromARGB(255, 122, 122, 122),
-                  spreadRadius: 20,
-                  blurRadius: 15,
-                  offset: Offset(0, 15)
-                ).scale(4)
-              ]
-            ),
+                color: color,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  const BoxShadow(
+                          color: Color.fromARGB(255, 122, 122, 122),
+                          spreadRadius: 20,
+                          blurRadius: 15,
+                          offset: Offset(0, 15))
+                      .scale(4)
+                ]),
             child: Padding(
               padding: const EdgeInsets.all(11.0),
               child: Column(
@@ -56,16 +54,18 @@ class PetTile extends StatelessWidget {
                     child: Text(
                       petBreed,
                       textAlign: TextAlign.left,
-                      style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
+                      style: const TextStyle(
+                          fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
                     ),
                   ),
-                    Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         petPrice,
                         textAlign: TextAlign.left,
-                        style: const TextStyle(fontSize: 16, color: Color(0xFFE8BE13)),
+                        style: const TextStyle(
+                            fontSize: 16, color: Color(0xFFE8BE13)),
                       ),
                       const Icon(
                         Icons.shopping_cart,
