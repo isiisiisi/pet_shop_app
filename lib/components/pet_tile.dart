@@ -30,49 +30,52 @@ class PetTile extends StatelessWidget {
               color: color,
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.8),
-                  spreadRadius: 4,
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
+                const BoxShadow(
+                  color: Color.fromARGB(255, 122, 122, 122),
+                  spreadRadius: 20,
+                  blurRadius: 15,
+                  offset: Offset(0, 15)
+                ).scale(4)
+              ]
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
-                    imagePath,
-                    height: 117.63,
-                    fit: BoxFit.cover,
+            child: Padding(
+              padding: const EdgeInsets.all(11.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      imagePath,
+                      height: 117.63,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 1.0, top: 5.0),
-                  child: Text(
-                    petBreed,
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
-                  ),
-                ),
-                  Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      petPrice,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 1.0, top: 6.0),
+                    child: Text(
+                      petBreed,
                       textAlign: TextAlign.left,
-                      style: const TextStyle(fontSize: 16, color: Color(0xFFE8BE13)),
+                      style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
                     ),
-                    const Icon(
-                      Icons.shopping_cart,
-                      size: 18,
-                      color: Color(0xFFE8BE13),
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                    Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        petPrice,
+                        textAlign: TextAlign.left,
+                        style: const TextStyle(fontSize: 16, color: Color(0xFFE8BE13)),
+                      ),
+                      const Icon(
+                        Icons.shopping_cart,
+                        size: 18,
+                        color: Color(0xFFE8BE13),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

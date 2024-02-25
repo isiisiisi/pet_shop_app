@@ -16,7 +16,7 @@ class CatalogScreen extends StatelessWidget {
         //store title
         Padding(
           padding: const EdgeInsets.only(
-            top: 70,
+            top: 60,
             bottom: 20.0,
           ),
           child: Center(
@@ -50,6 +50,8 @@ class CatalogScreen extends StatelessWidget {
           ),
         ),
 
+         const SizedBox(height: 7),
+
         // pet catalog
         Expanded(
           child: Consumer<CartModel>(builder: (context, value, child) {
@@ -57,7 +59,10 @@ class CatalogScreen extends StatelessWidget {
               itemCount: value.shopPets.length,
               padding: const EdgeInsets.all(12),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 0.0,
+                  childAspectRatio: 0.93
+              ),
               itemBuilder: (context, index) {
                 return PetTile(
                   petBreed: value.shopPets[index][0],
