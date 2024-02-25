@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class PetTile extends StatelessWidget {
   final String petBreed;
@@ -49,15 +50,27 @@ class PetTile extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 40.0),
+                  padding: const EdgeInsets.only(left: 1.0, top: 5.0),
                   child: Text(
                     petBreed,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 16),
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 68, 68, 68)),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      petPrice,
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(fontSize: 16, color: Color(0xFFE8BE13)),
+                    ),
+                    const Icon(
+                      Icons.shopping_cart,
+                      size: 18,
+                      color: Color(0xFFE8BE13),
+                    ),
+                  ],
                 ),
               ],
             ),

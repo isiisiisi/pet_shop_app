@@ -65,8 +65,8 @@ class CatalogScreen extends StatelessWidget {
                   imagePath: value.shopPets[index][2],
                   color: value.shopPets[index][3],
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const DetailsScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => const DetailsScreen()));
                   },
                 );
               },
